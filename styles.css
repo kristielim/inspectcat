@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.step {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  display: none;
+}
+
+#popup {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 300px;
+  height: 200px;
+  padding: 5px;
+  border: solid 2px #d56371; /* dark pink */
+  border-radius: 10%;
+  background-color: #ffcab3; /* orange */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1;
+}
+
+#instructions {
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: 18px;
+  text-align: center;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#next {
+  background-color: pink; /* light pink */
+  border-radius: 10%;
+  border: solid 2px #d56371;
+  font-family: "Gloria Hallelujah", cursive;
+  text-align: center;
+  font-size: 16px;
+  padding: 3px;
+  width: 75px;
+}
+
+#next:hover {
+  cursor: pointer;
+  background-color: #fada9a;
+  transition: background-color 0.5s;
+}
+
+@keyframes jump {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes dizzy {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#box-cat {
+  animation: dizzy 2s ease infinite;
+}
+
+#unicorn-cat {
+  transform: rotate(6deg);
+}
+
+.blog-text {
+  color: black;
+  font-size: 36px;
+  font-family: "Gloria Hallelujah", cursive;
+  font-style: normal;
+}
+
+#step-5 {
+  flex-direction: row;
+}
+
+.fam-cat {
+  margin: 200px;
+}
+
+#done-text {
+  font-size: 28px;
+  font-family: "Gloria Hallelujah", cursive;
+  text-align: center;
+  max-width: 500px;
+}
+
+#last-step {
+  background-color: #ffcab3;
+}
+
+#party-cat {
+  transform: translate(-30px, 0);
+  margin: 20px;
+}

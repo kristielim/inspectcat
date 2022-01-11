@@ -3,67 +3,45 @@ let index = 0;
 function isCatSmall() {
   const heightInPixels = $("#big-cat").css("height");
   const height = parseInt(heightInPixels.slice(0, -2));
-  if (height < 300) {
-    return true;
-  }
-  return false;
+  return height <= 300;
 }
 
-function isTextPink() {
+function isTextBlack() {
   const color = $("#blog-text-cute").css("color");
-  console.log(color);
-  if (color === "rgb(255, 192, 203)") {
-    return true;
-  }
-  return false;
+  return color === "rgb(0, 0, 0)";
 }
 
 function isTextCorrect() {
   const text = $("#blog-text-pizza").text();
-  console.log(text);
-  if (text === "Eating some pizza") {
-    return true;
-  }
-  return false;
+  return text === "Eating some pizza";
 }
 
 function isTextItalics() {
   const property = $(".blog-text").css("font-style");
-  console.log(property);
-  if (property === "italic") {
-    return true;
-  }
-  return false;
+  return property === "italic";
 }
 
 function areCatsNotDizzy() {
   const animation = $("#box-cat").css("animation");
-  if (animation.includes("jump") && !animation.includes("dizzy")) {
-    return true;
-  }
-  return false;
+  return animation.includes("jump") && !animation.includes("dizzy");
 }
 
 function areCatsReunited() {
   const property = $(".fam-cat").css("margin");
-  console.log(property);
-  if (property === "0px") {
-    return true;
-  }
-  return false;
+  return property === "0px";
 }
 
 const steps = [
   {
-    instruction: "Whoa! A giant cat appeared! Make its height smaller.",
+    instruction: "Whoa! A giant cat appeared! Make the cat small.",
     isCompleted: isCatSmall,
     failMessage: "Cat is still too big.",
   },
   {
     instruction:
-      "The cat is starting a blog, but the black text is not cute enough. Change it to pink!",
-    isCompleted: isTextPink,
-    failMessage: "Text is not pink.",
+      "The cat is starting a blog, but the pink text is hard to read. Change it to black!",
+    isCompleted: isTextBlack,
+    failMessage: "Text is not black.",
   },
   {
     instruction: "Oh no! Fix the typo!",
